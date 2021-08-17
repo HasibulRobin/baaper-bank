@@ -34,5 +34,13 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
     const previousWithdrawAmount = parseFloat(previousWithdrawText);
     const totalWithdrawAmount = withdrawAmount + previousWithdrawAmount;
     previousWithdraw.innerText = totalWithdrawAmount;
+
+    // import balance and subtract the amount of withdraw
+    const balance = document.getElementById('balance');
+    const balanceText = balance.innerText;
+    const balanceAmount = parseFloat(balanceText);
+    const finalBalance = balanceAmount - withdrawAmount;
+    balance.innerText = finalBalance;
+
     // console.log(withdrawAmount);
 });

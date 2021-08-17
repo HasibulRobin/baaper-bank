@@ -1,4 +1,4 @@
-// add event handler in withdraw button
+// add event handler in deposit button
 document.getElementById('deposit-button').addEventListener('click', function () {
     const depositInput = document.getElementById('deposit-input');
     const depositText = depositInput.value;
@@ -19,4 +19,20 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     balance.innerText = totalBalanceAmount;
 
     // console.log(depositAmount);
-})
+});
+
+// add event handler in withdraw button
+
+document.getElementById('withdraw-button').addEventListener('click', function () {
+    // import withdraw input
+    const withdrawInput = document.getElementById('withdraw-input');
+    const withdrawText = withdrawInput.value;
+    const withdrawAmount = parseFloat(withdrawText);
+    // import previous withdraw and add with new
+    const previousWithdraw = document.getElementById('withdraw');
+    const previousWithdrawText = previousWithdraw.innerText;
+    const previousWithdrawAmount = parseFloat(previousWithdrawText);
+    const totalWithdrawAmount = withdrawAmount + previousWithdrawAmount;
+    previousWithdraw.innerText = totalWithdrawAmount;
+    // console.log(withdrawAmount);
+});
